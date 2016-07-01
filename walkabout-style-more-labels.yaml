@@ -5513,6 +5513,31 @@ layers:
                             weight: 400
                             style: italic
                             fill: '#4ba3c5'
+            sports-pitch-areas:
+                filter: { kind: [grass, pitch], $zoom: { min: 16 } }
+                draw:
+                    icons:
+                        sprite: function() { return feature.sport; }
+                        visible: *icon_visible_poi_landuse_e
+                        priority: 49
+                baseball:
+                    filter: { sport: baseball }
+                    draw: { icons: { sprite: baseball-field } }
+                basketball:
+                    filter: { sport: basketball }
+                    draw: { icons: { sprite: basketball-court } }
+                football:
+                    filter: { sport: football }
+                    draw: { icons: { sprite: football-stadium } }
+                hockey:
+                    filter: { sport: hockey-field }
+                    draw: { icons: { sprite: hockey-field } }
+                soccer:
+                    filter: { sport: soccer }
+                    draw: { icons: { sprite: soccer-field } }
+                tennis:
+                    filter: { sport: tennis }
+                    draw: { icons: { sprite: tennis } }
             landuse-labels-not-any-above:
                 filter:
                     all:
@@ -5574,13 +5599,13 @@ layers:
                                 visible: true
                                 text_source: short_name
                 hide-till-later:
-                    filter: { kind: [pedestrian,common,railway,ship,houseboat,common,grass,wetland,pitch], $zoom: { max: 17 } }
+                    filter: { kind: [pedestrian,common,railway,ship,houseboat,common,grass,wetland], $zoom: { max: 17 } }
                     draw:
                         icons:
                             visible: false
                             text: { visible: false }
                 only-text-later:
-                    filter: { kind: [pedestrian,common,railway,ship,houseboat,common,grass,wetland,pitch], $zoom: { min: 17 } }
+                    filter: { kind: [pedestrian,common,railway,ship,houseboat,common,grass,wetland], $zoom: { min: 17 } }
                     draw:
                         icons:
                             visible: false
