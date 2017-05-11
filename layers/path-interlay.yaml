@@ -299,7 +299,7 @@ layers:
                         - [13, 1.50]
                         - [14, 2.0]
                     cull_from_tile: true
-                    visible: true
+                    visible: global.sdk_path_shields
                     text:
                         offset: [0px, -0.5px]
                         repeat_distance: 200px
@@ -363,19 +363,19 @@ layers:
                 draw:
                     icons:
                         priority: 56
-                        visible: true
+                        visible: global.sdk_path_shields
             network_nwn:
                 filter: { walking_network: nwn }
                 draw:
                     icons:
                         priority: 57
-                        visible: true
+                        visible: global.sdk_path_shields
             network_rwn:
                 filter: { walking_network: rwn }
                 draw:
                     icons:
                         priority: 58
-                        visible: true
+                        visible: global.sdk_path_shields
                 early:
                     filter: { $zoom: { max: 9 } }
                     draw:
@@ -386,7 +386,7 @@ layers:
                 draw:
                     icons:
                         priority: 59
-                        visible: true
+                        visible: global.sdk_path_shields
                 early:
                     filter: { $zoom: { max: 15 } }
                     draw:
@@ -396,7 +396,7 @@ layers:
 
 global:
     sdk_path_overlay: true          # should be true for default walkabout
-
+    sdk_path_shields: true          # should be true, except false for no-labels
 
 styles:
     dashed_steps_path_overlay:

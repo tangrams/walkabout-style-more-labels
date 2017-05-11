@@ -257,7 +257,7 @@ global:
     text_visible_piste:             true
     text_visible_steps:             true
     text_visible_aerialway:         true
-    sdk_road_shields:               true
+    sdk_road_shields:               true            # see also: sdk_bike_shields
     text_visible_exits:             true
     text_visible_exits_e:           true           #false for default
     text_visible_airport_gate:      true
