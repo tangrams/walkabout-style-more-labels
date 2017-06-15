@@ -3152,7 +3152,7 @@ layers:
     buildings:
         data: { source: mapzen, layer: buildings }
         filter:
-            not: { location: underground, layer: -1 }
+            not: { location: underground }
         # set default footprint and extrusion draw properties, but don't draw by default (rules below will turn visibility on)
         draw:
             polygons:
@@ -3184,8 +3184,6 @@ layers:
                     - { $zoom: [16], volume: { min: 50000 } }
                     #- { $zoom: [16], height: { min: 50 } }
                     - { $zoom: { min: 17 } }
-                all:
-                   - not: { location: underground }
             draw:
                 polygons:
                     visible: true
@@ -3209,6 +3207,8 @@ layers:
                             - { $zoom: [17], height: { min: 100 } }
                             - { $zoom: [17], volume: { min: 100000 } }
                             - { $zoom: { min: 18 } }
+                        - not:
+                            - layer: [-1, -2, -3, -4, -5]
                 draw:
                     polygons:
                         visible: true
@@ -5001,18 +5001,18 @@ layers:
                         font:
                             style: italic
 
-        # TODO: this isn't working, should see small icons near the transbay terminal in SF
         bus_stop:
             filter:
                 kind: [bus_stop]
             draw:
                 icons:
-                    size: 14px
+                    size: [[18,12px],[20,18px]]
                     text:
+                        optional: true
                         font:
                             size: 11px
                             weight: normal
-            later:
+            early:
                 filter: { $zoom: { max: 19 } }
                 draw:
                     icons:
