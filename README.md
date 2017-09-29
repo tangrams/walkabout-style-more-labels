@@ -1,3 +1,7 @@
+# WARNING
+
+This repo not maintained, use https://github.com/tangrams/walkabout-style instead.
+
 # walkabout-style-more-labels
 
 ### To run locally:
